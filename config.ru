@@ -6,5 +6,6 @@ end
 
 use ApplicationController
 use UserController
+use Rack::MethodOverride
 use LinetrackerController
 run ApplicationController

@@ -1,0 +1,47 @@
+
+<div style ="text-align:center;border-radius:25px; background-color:#02001c;">
+<h1 style ="color:white;">Edit Linetracker for <%=@linetracker.name%></h1>
+
+<h2 style="color:orange;"> <%=@error%> </h2>
+<form action ="/linetrackers/<%=@linetracker.id%>" method ="POST">
+  <input type="hidden" name ="_method" value="patch">
+
+    <div>
+        <label style ="color:white;" for ="name">Name:</label>
+       <input type ="text" name="linetracker[name]" value="<%=@linetracker.name%>">
+    </div> 
+    
+    <br>
+
+  <div>
+    <label style ="color:white;" for ="country">Country:</label>
+    <input type ="text" name="linetracker[country]" value="<%=@linetracker.country%>">
+</div> <br>
+
+<div>
+    <label style ="color:white;" for ="currency">Currency:</label>
+    <input type ="text" name="linetracker[currency]" value="<%=@linetracker.currency%>">
+    </div> <br>
+
+  <div>
+    <label style ="color:white;" for ="amount">Amount:</label>
+    <input type ="text" name="linetracker[amount]" value="<%=@linetracker.amount%>">
+</div> <br>
+<div>
+    <label style ="color:white;" for ="date">Date:</label>
+    <input type ="text" name="linetracker[date]" value="<%=@linetracker.date%>">
+</div> <br>
+    <div>
+    <label  style ="color:white;" for ="time">Time:</label>
+    <input type ="text" name="linetracker[time]" value="<%=@linetracker.time%>">
+     </div> <br>
+     <div>
+    <label style ="color:white;" for ="notes">Notes:</label>
+    <textarea name="linetracker[notes]"><%=@linetracker.notes%></textarea>
+    </div> <br>
+
+    <button style=" border-radius:25px; background-color:orange;font-style:italic;color:black;">Edit linetracker </button>
+
+</form>
+
+</div>
