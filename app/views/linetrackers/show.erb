@@ -8,6 +8,13 @@
     <div><span>Date:  </span><%=@linetracker.date %></div><br>
     <div><span>Time:  </span><%=@linetracker.time %></div><br>
     <div><span>Notes: </span><%=@linetracker.notes %></div>
-    <hr>
+
 
 </div>
+
+<form action ="/linetrackers/<%= @linetracker.id %>" method ="POST">
+
+  <input type ="hidden" name="_method" value="delete">
+  <button style="margin-bottom:1%;margin-right:85%;color:orange;border-radius:25px; background-color:#02001c;" type="submit"> delete <%=@linetracker.name%> </button>
+
+</form>

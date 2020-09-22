@@ -51,4 +51,13 @@ class LinetrackerController < ApplicationController
             erb :'linetrackers/edit'    
         end
     end
+
+    #delete
+
+    delete '/linetrackers/:id' do
+       linetracker =Linetracker.find(params[:id])
+       linetracker.destroy
+       redirect '/linetrackers'
+
+    end
 end
