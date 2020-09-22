@@ -1,0 +1,41 @@
+
+<div style ="text-align:center;border-radius:25px; background-color:#02001c;">
+<h1 style ="color:white;">Create a Linetracker</h1>
+
+<form action ="/linetrackers" method ="POST">
+<h2 style="color:orange;"> <%=@error%> </h2>
+  <div>
+    <label for ="name" style ="color:white;" >Name:</label>
+    <input type ="text" name="name">
+     </div> <br>
+
+     <div>
+    <label for ="country" style ="color:white;">Country:</label>
+    <input type ="text" name="country">
+     </div><br>
+
+     <div>    
+    <label for ="currency"style ="color:white;">Currency:</label>
+    <input type ="text" name="currency">
+   </div><br>
+
+    <div>
+    <label for ="amount" style ="color:white;">Amount:</label>
+    <input type ="text" name="amount">
+     </div><br>
+     <div>
+    <label for ="date"style ="color:white;">Date:</label>
+    <input type ="text" name="date">
+     </div><br>
+     <div>
+    <label for ="time"style ="color:white;">Time:</label>
+    <input type ="text" name="time">
+     </div><br>
+     <div>
+    <label for ="notes"style ="color:white;">Notes:</label>
+    <textarea rows="8" cols="45"  name="notes"></textarea>
+    </div><br>
+    <button style=" border-radius:25px; background-color:orange;font-style:italic;color:black;">Add linetracker </button>
+
+</form>
+</div>

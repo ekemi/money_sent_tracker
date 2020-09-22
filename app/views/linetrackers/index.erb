@@ -1,0 +1,25 @@
+
+<a href="/linetrackers/new" style = "margin-left:85%;color: orange;border:solid black ;border-radius:25px;text-decoration:none;background-color:#02001c;"> Create a Linetracker</a>
+
+<% @linetrackers.each do |line|%>
+  <div style = "text-align:center; border:solid ;border-radius:25px;">  
+  <h2><span>Name:</span> 
+  
+  <a style ="text-decoration:none;border-radius:25px solid;color:orange;"href ="/linetrackers/<%=line.id%>"> <%=line.name %> </a>
+  
+  </h2>
+   
+   <h2><span>Country:   </span><%=line.country %></h2>
+    <h2><span>Currency:   </span><%=line.currency %></h2>
+    <h2><span>Amount:   </span><%=line.amount %></h2>
+    <h2><span>Date:   </span><%=line.date %></h2>
+    <h2><span>Time:   </span><%=line.time %></h2>
+    <h2><span>Notes:   </span><%=line.notes %></h2>
+    
+
+ </div>
+
+
+
+
+    <%end%>
