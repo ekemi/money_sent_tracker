@@ -1,9 +1,5 @@
-<h2> Welcome <%=@user.username%> </h2>
-  <div>
-<span><a href="/linetrackers/new" style = "margin-left:85%;color: orange;border:solid black ;border-radius:25px;text-decoration:none;background-color:#02001c;"> Create a Linetracker</a></span>
 
-<span> <a href="/logout" style = "margin-left:65%;color: orange;border:solid black ;border-radius:25px;text-decoration:none;background-color:#02001c;"> Log out</a>
-</div>
+
 
 <% @linetrackers.each do |line|%>
   <div style = "text-align:center; border:solid ;border-radius:25px;">  
@@ -19,10 +15,5 @@
     <h2><span>Date:   </span><%=line.date %></h2>
     <h2><span>Time:   </span><%=line.time %></h2>
     <h2><span>Notes:   </span><%=line.notes %></h2>
-
-       
-      
-    <a href="/linetrackers/<%=line.id%>" style = "margin-left:85%;color: orange;border:solid black ;border-radius:25px;text-decoration:none;background-color:#02001c;"> Edit Linetracker</a>
-      
-    <%end%>
  </div>
+ <%end%>
