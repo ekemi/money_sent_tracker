@@ -2,6 +2,7 @@ class LinetrackerController < ApplicationController
 
     #create
  get '/linetrackers/new' do
+    
         erb :'linetrackers/new' 
     end
 
@@ -18,24 +19,32 @@ class LinetrackerController < ApplicationController
 
 #     #read
 
+  get '/linetrackers' do
+     @user = User.find(session[:user_id])
+     #if @User
+        @linetrackers = Linetracker.all.reverse
+        erb :'linetrackers/index'
+#      else
+#         redirect '/login'    
+#    end
+end
+
     get '/linetrackers/:id' do 
-        #binding.pry
-        @linetracker = Linetracker.find(params[:id])
+        id = params[:id]
+        @linetracker = Linetracker.find_by(id: id)
         erb :'/linetrackers/show'
     end
 
-    get '/linetrackers' do
-
-        @linetrackers = Linetracker.all.reverse
-
-        erb :'linetrackers/index'
-    end
 
     #update
 
     get '/linetrackers/:id/edit' do
-        @linetracker = Linetracker.find(params[:id])
-        erb :'linetrackers/edit'
+
+            id = params[:id]
+            @linetracker = Linetracker.find_by(id: id)
+            if session[:user_id] == @linetracker.user_id
+                erb :'linetrackers/edit'
+        end
 
     end
 
@@ -60,4 +69,5 @@ class LinetrackerController < ApplicationController
        redirect '/linetrackers'
 
     end
+
 end

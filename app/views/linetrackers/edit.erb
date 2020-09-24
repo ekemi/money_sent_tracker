@@ -1,8 +1,10 @@
-
+  
 <div style ="text-align:center;border-radius:25px; background-color:#02001c;">
 <h1 style ="color:white;">Edit Linetracker for <%=@linetracker.name%></h1>
 
 <h2 style="color:orange;"> <%=@error%> </h2>
+
+
 <form action ="/linetrackers/<%=@linetracker.id%>" method ="POST">
   <input type="hidden" name ="_method" value="patch">
 
@@ -39,8 +41,8 @@
     <label style ="color:white;" for ="notes">Notes:</label>
     <textarea name="linetracker[notes]"><%=@linetracker.notes%></textarea>
     </div> <br>
-
-    <button style=" border-radius:25px; background-color:orange;font-style:italic;color:black;">Edit linetracker </button>
+          
+    <button style=" border-radius:25px; background-color:orange;font-style:italic;color:black;">edit </button>
 
 </form>
 

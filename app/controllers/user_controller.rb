@@ -4,15 +4,21 @@ class UserController < ApplicationController
    #user can create an account
    get '/signup' do
     #binding.pry 
-    erb :'users/signup'
+    if !logged_in?
+      erb :'users/signup'
+
+    else
+      redirect '/linetrackers'
    end
+  end
 
 
    post '/signup' do
-    
-    user = User.create(username: params[:username], password: params[:password])
-    if user.save
-      session[user_id]= user.id
+
+    @user = User.new(username: params[:username], password: params[:password])
+    if @user.save
+      session[:suser_id]= @user.id
+   
       redirect '/linetrackers'
 
     elsif User.find(username: params[:username])
@@ -33,6 +39,8 @@ class UserController < ApplicationController
     erb :'users/show'
     
    end
+
+   
 
    #user can delete an account
 end
