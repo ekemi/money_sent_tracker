@@ -44,21 +44,6 @@ class UserController < ApplicationController
 
 #    #user can delete an account
 # end
-get '/users/new' do
-
-  erb :'/users/new'
-end
-
-post'/users' do 
-  @user = User.new(username: params[:username],password: [:password])
-  if @user.save
-    session[:user_id] = @user.id
-    redirect '/linetrackers/index'
-  else
-    erb :'users/new'  
-
-  end
-end
 
 
 
