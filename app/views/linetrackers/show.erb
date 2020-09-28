@@ -15,6 +15,7 @@
 <form action ="/linetrackers/<%= @linetracker.id %>" method ="POST">
 
   <input type ="hidden" name="_method" value="delete">
+    <% if @linetracker.user == current_user%>
   <button style="margin-bottom:1%;margin-right:85%;color:orange;border-radius:25px; background-color:#02001c;" type="submit"> delete <%=@linetracker.name%> </button>
-
+<%end%>
 </form>

@@ -1,5 +1,4 @@
 
-<p> <%=@er%> </p>
 
 <div style = "background-color:#02001c; text-align: center; border-radius:25px;">
 <h1 style = "font-style:italic;color:white;">sign up </h1>
@@ -8,6 +7,8 @@
 
 
 <form action ="/signup" method ="POST">
+
+<h2 style="color:red"> <%=@error%> </h2>
 
 <label for="username" style = "font-style:italic; color:white;">Username</lable>
 <input type ="text" name="username" style=" border-radius:25px;">

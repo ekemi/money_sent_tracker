@@ -15,7 +15,7 @@ class UserController < ApplicationController
             session[:user_id]= @user.id
             redirect  '/linetrackers'
         elsif User.find_by(username: @user.username)
-            @er = "Account already exist."
+            @error = "Account already exist."
             redirect '/signup'    
         else
             @error = "Username and password can not be blank."
