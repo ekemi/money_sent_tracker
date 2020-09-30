@@ -23,7 +23,7 @@
        
       <% if current_user ==line.user%>
       <h2> Welcome  <%=line.user.username%> </h2>
-    <a href="/linetrackers/<%=line.id%>" style = "margin-left:85%;color: orange;border:solid black ;border-radius:25px;text-decoration:none;background-color:#02001c;"> Edit Linetracker</a>
+    <a href="/linetrackers/<%=line.id%>/edit" style = "margin-left:85%;color: orange;border:solid black ;border-radius:25px;text-decoration:none;background-color:#02001c;"> Edit Linetracker</a>
       <%end%>
     <%end%>
  </div>

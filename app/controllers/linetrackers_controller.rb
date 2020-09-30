@@ -16,8 +16,8 @@ class LinetrackerController < ApplicationController
     end
 
     post '/linetrackers' do
-       @linetracker = current_user.linetrackers.build(params) #linetracker = Linetracker.new(params)
-        if !@linetracker.name.empty? && !@linetracker.country.empty?&& !@linetracker.currency.empty?&& !@linetracker.date.empty?&& !@linetracker.amount.empty?&& !@linetracker.time.empty?
+       linetracker = current_user.linetrackers.build(params) #linetracker = Linetracker.new(params)
+        if linetracker.save #!linetracker.name.empty? && !linetracker.country.empty?&& !linetracker.currency.empty?&& !linetracker.date.empty?&& !linetracker.amount.empty?&& !linetracker.time.empty?
             linetracker.save
             redirect '/linetrackers'
         else
@@ -69,8 +69,8 @@ class LinetrackerController < ApplicationController
 
     patch '/linetrackers/:id' do 
            @linetracker = Linetracker.find(params[:id])    
-        if !params["linetracker"]["name"].empty? && !params["linetracker"]["country"].empty? && !params["linetracker"]["currency"].empty?&& !params["linetracker"]["amount"].empty?&& !params["linetracker"]["date"].empty?&& !params["linetracker"]["time"].empty?
-            @linetracker.update(params[:linetracker])
+        if @linetracker.update(params[:linetracker]) #!params["linetracker"]["name"].empty? && !params["linetracker"]["country"].empty? && !params["linetracker"]["currency"].empty?&& !params["linetracker"]["amount"].empty?&& !params["linetracker"]["date"].empty?&& !params["linetracker"]["time"].empty?
+            #@linetracker.update(params[:linetracker])
             redirect "/linetrackers/#{@linetracker.id}"
         else
             @error = "Invalid"
